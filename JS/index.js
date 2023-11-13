@@ -36,4 +36,5 @@ function clearInputs() {
   document.getElementById("height").value = "";
   document.getElementById("weight").value = "";
   document.getElementById("result").innerHTML = "";
+  document.getElementById("error").innerHTML = "";
 }
