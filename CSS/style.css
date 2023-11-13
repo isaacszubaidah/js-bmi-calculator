@@ -36,7 +36,7 @@ input {
     outline: none;
 }
 
-button {
+#calculateButton {
     background-color: rgb(216, 78, 165);
     color: #fff;
     padding: 10px;
@@ -45,9 +45,30 @@ button {
     cursor: pointer;
     width: 100%;
     max-width: 470px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-button:hover {
+#calculateButton:hover {
+    opacity: 0.7;
+}
+
+
+#clearButton {
+    background-color: lightblue;
+    margin-top: 5px;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 470px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+#clearButton:hover {
     opacity: 0.7;
 }
 
@@ -58,6 +79,7 @@ button:hover {
 
 #error {
     color: red;
+    padding-top: 10px;
 }
 
 

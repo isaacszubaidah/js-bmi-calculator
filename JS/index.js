@@ -1,29 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
-  var calculateButton = document.getElementById("calculateButton");
+  let calculateButton = document.getElementById("calculateButton");
 
   calculateButton.addEventListener("click", function () {
-      calculateBMI();
+    calculateBMI();
+  });
+
+  clearButton.addEventListener("click", function () {
+    clearInputs();
   });
 });
 
 function calculateBMI() {
-  // Get the height and weight input values
-  var heightInput = document.getElementById("height");
-  var weightInput = document.getElementById("weight");
+  let heightInput = document.getElementById("height");
+  let weightInput = document.getElementById("weight");
+  let errorSpan = document.getElementById("error");
 
-  var height = parseFloat(heightInput.value);
-  var weight = parseFloat(weightInput.value);
+  let height = parseFloat(heightInput.value);
+  let weight = parseFloat(weightInput.value);
 
-  // Check if the inputs are valid numbers
+
   if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
-      alert("Please enter valid height and weight values.");
-      return;
+    errorSpan.innerHTML = "Please enter valid height and weight values.";
+    return;
   }
 
-  // Calculate BMI
-  var bmi = weight / ((height / 100) * (height / 100));
 
-  // Display the result
-  var resultDiv = document.getElementById("result");
+  let bmi = weight / ((height / 100) * (height / 100));
+
+
+  let resultDiv = document.getElementById("result");
   resultDiv.innerHTML = "Your BMI is: " + bmi.toFixed(2);
+}
+
+function clearInputs() {
+  document.getElementById("height").value = "";
+  document.getElementById("weight").value = "";
+  document.getElementById("result").innerHTML = "";
 }
